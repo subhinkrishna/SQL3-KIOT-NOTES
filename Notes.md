@@ -147,6 +147,7 @@ SELECT COALESCE(NULL, NULL, 'SQL', 'MongoDB');
 
 
 ## SUB QUERY
+### SINGLE ROW SUB QUERY
 CREATE TABLE Employees (
     emp_id INT,
     emp_name VARCHAR(50),
@@ -163,3 +164,27 @@ SELECT * FROM Employees;
 SELECT * FROM Employees WHERE salary > 30000;
 SELECT AVG(salary) FROM Employees;
 SELECT * FROM Employees WHERE salary > (SELECT AVG(salary) FROM Employees);
+
+### NESTED SUB QUERY
+SELECT AVG(salary)
+    FROM Employees
+    WHERE department =
+    (
+        SELECT department
+        FROM Employees
+        WHERE emp_name = 'Arun'
+    );
+
+SELECT *
+FROM Employees
+WHERE salary >
+(
+    SELECT AVG(salary)
+    FROM Employees
+    WHERE department =
+    (
+        SELECT department
+        FROM Employees
+        WHERE emp_name = 'Arun'
+    )
+);
