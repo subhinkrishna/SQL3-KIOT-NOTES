@@ -1,4 +1,6 @@
-<!-- DATE FUNCTION NOTES -->
+# SQL QUERIES USED IN 3 DAYS CLASS
+
+## DATE FUNCTION NOTES
 use testdata;
 
 CREATE TABLE EmployeeSalary (
@@ -50,7 +52,7 @@ SELECT salary, MOD(salary, 10000) AS AbsoluteSalary FROM EmployeeSalary;
 
 
 
-<!-- JOIN FUNCTIONS IN SQL -->
+## JOIN FUNCTIONS IN SQL
 CREATE TABLE Customers (
     customer_id INT PRIMARY KEY,
     customer_name VARCHAR(50)
@@ -105,7 +107,7 @@ ON c.customer_id = o.customer_id;
 
 
 
-<!-- Conditionals Function in SQL -->
+## Conditionals Function in SQL
 CREATE TABLE Employees1 (
     emp_id INT,
     emp_name VARCHAR(50),
@@ -144,7 +146,7 @@ SELECT COALESCE(NULL, NULL, 'SQL', 'MongoDB');
 
 
 
-<!-- SUB QUERY -->
+## SUB QUERY
 CREATE TABLE Employees (
     emp_id INT,
     emp_name VARCHAR(50),
